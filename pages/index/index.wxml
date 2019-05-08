@@ -1,13 +1,37 @@
 <!--index.wxml-->
+
+
 <view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
+  <template name="msgItem">
+    <view>
+      <text>{{index}}:{{msg}}</text>
+      <text>Time: {{time}}</text>
+    </view>
+  </template>
+
+  <view class="today">
+    <view class="info">
+      <view class="temp">{{temp}}</view>
+      <view class="lowhigh">{{low}}/{{high}}</view>
+      <view class="type">{{type}}</view>
+      <view class="city">{{city}}</view>
+      <view class="week">{{week}}</view>
+      <view class="weather">{{weather}}</view>
+    </view>
   </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
+  <view wx:for="{{arr}}" wx:key="name">
+    {{item.name}}
   </view>
+  <template is="msgItem" data="{{item}}"></template>
+  <template name="odd">
+    <text>odd</text>
+  </template>
+  <template name="even">
+    <text>even</text>
+  </template>
+  <block wx:for="{{[1,2,3,4,5]}}">
+    <template is='{{item % 2 == 0? "even": "odd"}}'/> 
+  </block>
+
+
 </view>

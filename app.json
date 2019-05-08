@@ -1,12 +1,11 @@
 {
   "pages": [
-    "pages/index/index",
-    "pages/logs/logs"
+    "pages/index/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
+    "navigationBarTitleText": "中国天气网",
     "navigationBarTextStyle": "black"
   },
   "sitemapLocation": "sitemap.json"
